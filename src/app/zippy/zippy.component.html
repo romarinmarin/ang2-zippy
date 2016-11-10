@@ -1,9 +1,9 @@
 <div class="zippy">
   <div class="zippy__title" (click)="toggle()">
-    Details
+    {{ isVisible ? 'down' : 'up' }} Details
   </div>
   <div class="zippy__content" [hidden]="!isVisible">
     This is some content.
-  </div
+  </div>
 </div>
 
