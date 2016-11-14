@@ -1,6 +1,6 @@
 <div class="zippy">
   <div class="zippy__title" (click)="toggle()">
-    {{ isOpen ? 'down' : 'up' }} {{ title }}
+    {{ isOpen ? '&#9660;' : '&#9654;' }} {{ title }}
   </div>
   <div class="zippy__content" [hidden]="!isOpen">
     <ng-content></ng-content>

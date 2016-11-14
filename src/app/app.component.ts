@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'app works!';
   logs:string[] =  [];
 
+
   log(message) {
     this.logs.push(message);
   }
