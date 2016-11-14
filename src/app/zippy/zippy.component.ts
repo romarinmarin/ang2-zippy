@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'my-zippy',
@@ -8,13 +8,17 @@ import {Component, OnInit, Input} from '@angular/core';
 export class ZippyComponent implements OnInit {
 
   @Input() title;
-  isVisible : boolean = true;
+  @Input() isOpen : boolean = true;
+  @Output() opened = new EventEmitter();
+  @Output() closed =  new EventEmitter();
 
   constructor() {
 
   }
   toggle() {
-    this.isVisible = !this.isVisible;
+    this.isOpen = !this.isOpen;
+    this.isOpen ? this.opened.emit() : this.closed.emit();
+
   }
 
   ngOnInit() {

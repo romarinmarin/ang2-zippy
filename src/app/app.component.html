@@ -1,3 +1,10 @@
-<my-zippy [title]="'detail'">
+<my-zippy [title]="'detail'" [isOpen]="false" (opened)="log('opened')" (closed)="log('closed')">
   <p>Here some details component</p>
 </my-zippy>
+
+<h3>Logs : </h3>
+<ul>
+  <li *ngFor="let log of logs">
+    {{log}}
+  </li>
+</ul>
